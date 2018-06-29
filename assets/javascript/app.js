@@ -33,42 +33,41 @@ $("#submit").on("click", function () {
     freq: frequency
 
   });
- 
+
 });
 
 // 3. Create Firebase event for adding train to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function (childSnapshot) {
 
-  console.log(childSnapshot.val());
+    console.log(childSnapshot.val());
 
-  let newTrainName = childSnapshot.val().name;
-  let newDestination = childSnapshot.val().dest;
-  let newFirstTrain = childSnapshot.val().first;
-  let newFrequency = childSnapshot.val().freq;
- 
-     var firstTimeConverted = moment(newFirstTrain, "HH:mm").subtract(1, "years");
-     console.log(firstTimeConverted);
+    let newTrainName = childSnapshot.val().name;
+    let newDestination = childSnapshot.val().dest;
+    let newFirstTrain = childSnapshot.val().first;
+    let newFrequency = childSnapshot.val().freq;
 
-     var currentTime = moment();
-     console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+    var firstTimeConverted = moment(newFirstTrain, "HH:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
 
-     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-     console.log("DIFFERENCE IN TIME: " + diffTime);
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
-     var tRemainder = diffTime % newFrequency;
-     console.log(tRemainder);
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
 
-     var minAway = newFrequency - tRemainder;
-     console.log("MINUTES TILL TRAIN: " + minAway);
+    var tRemainder = diffTime % newFrequency;
+    console.log(tRemainder);
 
-     var nxtArr = moment().add(minAway, "minutes").format("HH:mm");
-     console.log("ARRIVAL TIME: " + moment(nxtArr).format("HH:mm"));
+    var minAway = newFrequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + minAway);
 
-  $("#train-table > tbody").append("<tr><td>" + newTrainName + "</td><td>" + newDestination + "</td><td>" + newFrequency + "</td><td>" + nxtArr + "</td><td>" + minAway + "</td></tr>");
+    var nxtArr = moment().add(minAway, "minutes").format("HH:mm");
+    console.log("ARRIVAL TIME: " + moment(nxtArr).format("HH:mm"));
+
+    $("#train-table > tbody").append("<tr><td>" + newTrainName + "</td><td>" + newDestination + "</td><td>" + newFrequency + "</td><td>" + nxtArr + "</td><td>" + minAway + "</td></tr>");
+    
+  }),
+  function (objectError) {
+    console.log('Failed ' + objectError)
+  }
   
-}), function(objectError){
-  console.log('Failed ' + objectError)
-}
-
-
-   
