@@ -3,6 +3,10 @@
 .card-primary .card-body {
     padding: 0px;
 }
+ .form{
+     padding: 5px;
+    margin-bottom: 10px;
+}
 .table thead th {
     font-weight: bold;
     font-size: xx-small;
@@ -62,4 +66,24 @@ nav a {
 
 .jumbotron {
     margin-top: 30px;
+}
+
+@media screen and (min-width: 767px) {
+    .table thead th {
+        font-weight: bold;
+        font-size: large;
+        vertical-align: middle;
+        text-align: center;                                    
+    }
+    .table td {
+        font-weight: bold;
+        font-size: medium;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .card-title {
+        padding-top: 1rem;
+        text-align: center;
+        vertical-align: center;
+    }
 }

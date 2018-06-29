@@ -33,7 +33,10 @@ $("#submit").on("click", function () {
     freq: frequency
 
   });
-
+  $("#train-input").val("");
+  $("#destination-input").val("");
+  $("#time-input").val();
+  $("#frequency-input").val("");
 });
 
 // 3. Create Firebase event for adding train to the database and a row in the html when a user adds an entry
@@ -71,3 +74,4 @@ database.ref().on("child_added", function (childSnapshot) {
     console.log('Failed ' + objectError)
   }
   
+ 
