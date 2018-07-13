@@ -1,10 +1,7 @@
-# Train-scheduler
+# Train-scheduler[Train Sheduler](https://funkaj.github.io/Train-scheduler/)
 
 Web page that allows user to add trains to table. stores user input in firebase.
 Built for practice using Firebase.google in web development.
-
-## Try it here
-https://funkaj.github.io/Train-scheduler/
 
 ## Built with/using
 * Bootstrap
@@ -17,6 +14,11 @@ https://funkaj.github.io/Train-scheduler/
 * User can input trains name, destination, time of first departure, and frequency in minutes
 * User input is stored at Firebase.google and loaded to client page 
 
+## Author 
+
+* **Adam Funk** 
+* [Github](https://github.com/funkaj)
+* [LinkedIn](https://www.linkedin.com/feed/)
 
 
 
