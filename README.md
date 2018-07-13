@@ -1,4 +1,4 @@
-# Train-scheduler[Train Sheduler](https://funkaj.github.io/Train-scheduler/)
+# [Train Sheduler](https://funkaj.github.io/Train-scheduler/)
 
 Web page that allows user to add trains to table. stores user input in firebase.
 Built for practice using Firebase.google in web development.
